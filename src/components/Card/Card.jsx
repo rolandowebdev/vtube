@@ -21,7 +21,7 @@ const Card = () => {
           <Text>
             <Title>Test Video</Title>
             <ChannelName>rolandowebdev</ChannelName>
-            <Info>660,908 - 1 day ago</Info>
+            <Info>660,908 • 1 day ago</Info>
           </Text>
         </Details>
       </Link>
