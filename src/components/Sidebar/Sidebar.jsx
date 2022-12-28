@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+/* eslint-disable react/prop-types */
 import { AccountCircleOutlined } from '@mui/icons-material';
+import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
+import styled from 'styled-components';
 import {
   logo,
   categoriesOne,
@@ -10,9 +12,9 @@ import {
 
 const Container = styled.div`
   flex: 1;
-  background-color: #202020;
+  background-color: ${({ theme }) => theme.bg};
   height: 100vh;
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
   overflow-y: auto;
   position: sticky;
@@ -45,7 +47,7 @@ const Item = styled.div`
 
 const Hr = styled.hr`
   margin: 15px 0;
-  border: 0.5px solid #373737;
+  border: 0.5px solid ${({ theme }) => theme.soft};
 `;
 
 const Login = styled.div``;
@@ -69,7 +71,15 @@ const Button = styled.button`
   }
 `;
 
-const Sidebar = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.textSoft};
+  margin-bottom: 20px;
+  text-transform: uppercase;
+`;
+
+const Sidebar = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -98,6 +108,7 @@ const Sidebar = () => {
           </Button>
         </Login>
         <Hr />
+        <Title>best of vtube</Title>
         {categoriesThree.map((category) => (
           <Item key={category.id}>
             {category.icon}
@@ -111,6 +122,10 @@ const Sidebar = () => {
             {category.name}
           </Item>
         ))}
+        <Item onClick={() => setDarkMode(!darkMode)}>
+          <SettingsBrightnessOutlinedIcon />
+          Light Theme
+        </Item>
       </Wrapper>
     </Container>
   );

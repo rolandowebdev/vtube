@@ -9,11 +9,9 @@ import SportsBasketballOutlinedIcon from '@mui/icons-material/SportsBasketballOu
 import MovieOutlinedIcon from '@mui/icons-material/MovieOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import LiveTvOutlinedIcon from '@mui/icons-material/LiveTvOutlined';
-
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 
 export const categoriesOne = [
   {
@@ -88,15 +86,10 @@ export const categoriesFour = [
   {
     id: 13,
     name: 'Home',
-    icon: <SettingsBrightnessOutlinedIcon />
-  },
-  {
-    id: 14,
-    name: 'Home',
     icon: <FlagOutlinedIcon />
   },
   {
-    id: 15,
+    id: 14,
     name: 'Home',
     icon: <HelpOutlineOutlinedIcon />
   }
