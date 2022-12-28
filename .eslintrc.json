@@ -19,10 +19,10 @@
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
-
   "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react/function-component-definition": 0,
-    "arrow-body-style": 0
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "off",
+    "arrow-body-style": "off",
+    "react/function-component-definition": "off"
   }
 }
