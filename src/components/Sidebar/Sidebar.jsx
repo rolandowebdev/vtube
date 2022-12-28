@@ -2,6 +2,8 @@ import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightne
 import { AccountCircleOutlined } from '@mui/icons-material';
 import { Container, Button, Hr, Img, Item, Login, Logo, Title, Wrapper } from './Sidebar.styled';
 
+import { useThemeModeUpdateContext } from '../ThemeModeProvider/ThemeModeProvider';
+
 import {
   logo,
   categoriesOne,
@@ -10,7 +12,9 @@ import {
   categoriesFour
 } from '../../assets/index';
 
-const Sidebar = ({ darkMode, setDarkMode }) => {
+const Sidebar = () => {
+  const toggleTheme = useThemeModeUpdateContext();
+
   return (
     <Container>
       <Wrapper>
@@ -53,7 +57,7 @@ const Sidebar = ({ darkMode, setDarkMode }) => {
             {category.name}
           </Item>
         ))}
-        <Item onClick={() => setDarkMode(!darkMode)}>
+        <Item onClick={toggleTheme}>
           <SettingsBrightnessOutlinedIcon />
           Light Theme
         </Item>

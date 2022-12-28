@@ -1,20 +1,19 @@
-import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 
 import { Home, Video } from './pages';
-import { Sidebar, Navbar } from './components';
+import { Navbar, Sidebar } from './components';
 
 import { Container, Main, Wrapper } from './App.styled';
 import { darkTheme, lightTheme } from './utils/Theme';
+import { useThemeModeContext } from './components/ThemeModeProvider/ThemeModeProvider';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
+  const themeMode = useThemeModeContext();
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
       <Container>
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Sidebar />
         <Main>
           <Navbar />
           <Wrapper>

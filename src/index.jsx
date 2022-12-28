@@ -6,12 +6,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeModeProvider } from './components';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ThemeModeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeModeProvider>
   </React.StrictMode>
 );
 
