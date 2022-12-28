@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Menu from './components/Menu/Menu';
+import { Sidebar } from './components';
 
 const Container = styled.div`
   display: flex;
@@ -10,16 +10,12 @@ const Main = styled.div`
   background-color: #181818;
 `;
 
-const Wrapper = styled.div``;
-
 const App = () => {
   return (
     <Container>
-      <Menu />
+      <Sidebar />
       <Main>
-        <Wrapper>
-          <h1>Video List</h1>
-        </Wrapper>
+        <h1>Video List</h1>
       </Main>
     </Container>
   );

@@ -69,7 +69,7 @@ const Button = styled.button`
   }
 `;
 
-const Menu = () => {
+const Sidebar = () => {
   return (
     <Container>
       <Wrapper>
@@ -116,4 +116,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Sidebar;
