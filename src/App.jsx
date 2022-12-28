@@ -1,25 +1,16 @@
 import { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
-
-import { darkTheme, lightTheme } from './utils/Theme';
 
 import { Home, Video } from './pages';
 import { Sidebar, Navbar } from './components';
 
-const Container = styled.div`
-  display: flex;
-`;
-
-const Main = styled.div`
-  flex: 4;
-  background-color: ${({ theme }) => theme.soft};
-`;
-
-const Wrapper = styled.div``;
+import { Container, Main, Wrapper } from './App.styled';
+import { darkTheme, lightTheme } from './utils/Theme';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
