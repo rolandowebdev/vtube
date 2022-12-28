@@ -1,5 +1,6 @@
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 import { AccountCircleOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import { Container, Button, Hr, Img, Item, Login, Logo, Title, Wrapper } from './Sidebar.styled';
 
 import { useThemeModeUpdateContext } from '../ThemeModeProvider/ThemeModeProvider';
@@ -18,10 +19,12 @@ const Sidebar = () => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={logo} alt="logo" />
-          VTuber
-        </Logo>
+        <Link to="video/test" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Logo>
+            <Img src={logo} alt="logo" />
+            VTuber
+          </Logo>
+        </Link>
         {categoriesOne.map((category) => (
           <Item key={category.id}>
             {category.icon}

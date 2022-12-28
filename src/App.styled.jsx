@@ -9,4 +9,6 @@ export const Main = styled.div`
   background-color: ${({ theme }) => theme.soft};
 `;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  padding: 28px;
+`;
