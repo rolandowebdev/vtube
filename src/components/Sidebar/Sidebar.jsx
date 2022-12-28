@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { AccountCircleOutlined } from '@mui/icons-material';
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 import styled from 'styled-components';

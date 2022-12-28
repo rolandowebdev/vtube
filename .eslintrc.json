@@ -25,6 +25,7 @@
     "arrow-body-style": "off",
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off"
   }
 }

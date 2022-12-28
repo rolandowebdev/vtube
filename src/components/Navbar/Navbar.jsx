@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styled from 'styled-components';
 import { AccountCircleOutlined, SearchOutlined } from '@mui/icons-material';
 
