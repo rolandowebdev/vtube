@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Sidebar } from './components';
+import { useState } from 'react';
+import { Sidebar, Navbar } from './components';
 import { darkTheme, lightTheme } from './utils/Theme';
 
 const Container = styled.div`
@@ -19,6 +19,7 @@ const App = () => {
       <Container>
         <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Main>
+          <Navbar />
           <h1>Video List</h1>
         </Main>
       </Container>
