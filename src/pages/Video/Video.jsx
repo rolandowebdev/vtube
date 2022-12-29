@@ -5,8 +5,6 @@ import {
   AddTaskOutlined
 } from '@mui/icons-material';
 
-import { Comment, Card } from '../../components';
-
 import {
   Container,
   Content,
@@ -27,6 +25,8 @@ import {
   Description,
   Image
 } from './Video.styled';
+
+import { Comment, Card } from '../../components';
 
 const Video = () => {
   return (

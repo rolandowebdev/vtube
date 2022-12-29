@@ -40,9 +40,11 @@ const Sidebar = () => {
         <Hr />
         <Login>
           Sign in to like, videos, comment, and subscribe.
-          <Button>
-            <AccountCircleOutlined /> Sign In
-          </Button>
+          <Link to="signin" style={{ textDecoration: 'none' }}>
+            <Button>
+              <AccountCircleOutlined /> Sign In
+            </Button>
+          </Link>
         </Login>
         <Hr />
         <Title>best of vtube</Title>

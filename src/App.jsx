@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 
-import { Home, Video } from './pages';
+import { Home, SignIn, Video } from './pages';
 import { Navbar, Sidebar } from './components';
 
 import { Container, Main, Wrapper } from './App.styled';
@@ -20,6 +20,7 @@ const App = () => {
             <Routes>
               <Route path="/">
                 <Route index element={<Home />} />
+                <Route path="signin" element={<SignIn />} />
                 <Route path="video">
                   <Route path=":id" element={<Video />} />
                 </Route>
