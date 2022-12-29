@@ -5,7 +5,7 @@ import {
   AddTaskOutlined
 } from '@mui/icons-material';
 
-import { Comment } from '../../components';
+import { Comment, Card } from '../../components';
 
 import {
   Container,
@@ -78,7 +78,14 @@ const Video = () => {
           <Comment />
         </VideoWrapper>
       </Content>
-      <Recommendation>recommendation</Recommendation>
+      <Recommendation>
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+      </Recommendation>
     </Container>
   );
 };

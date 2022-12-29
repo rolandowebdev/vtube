@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  gap: 2px;
+  gap: 10px;
 `;
 
 export const Content = styled.div`
-  flex: 5;
+  flex: 4;
 `;
 
 export const VideoWrapper = styled.div``;

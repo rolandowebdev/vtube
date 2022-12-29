@@ -15,7 +15,6 @@ import {
 
 const Sidebar = () => {
   const toggleTheme = useThemeModeUpdateContext();
-
   return (
     <Container>
       <Wrapper>

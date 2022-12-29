@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  flex: 4;
+  flex: 5;
   background-color: ${({ theme }) => theme.bgLighter};
 `;
 

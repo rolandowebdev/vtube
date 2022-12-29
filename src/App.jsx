@@ -11,7 +11,7 @@ import { useThemeModeContext } from './components/ThemeModeProvider/ThemeModePro
 const App = () => {
   const themeMode = useThemeModeContext();
   return (
-    <ThemeProvider theme={themeMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={themeMode ? lightTheme : darkTheme}>
       <Container>
         <Sidebar />
         <Main>
