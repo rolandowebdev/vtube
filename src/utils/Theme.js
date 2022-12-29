@@ -1,15 +1,14 @@
 export const darkTheme = {
   bg: '#181818',
-  bgLight: '#202020',
-  text: '#f9f9f9',
+  bgLighter: '#202020',
+  text: '#fff',
   textSoft: '#aaaaaa',
   soft: '#373737'
 };
-
 export const lightTheme = {
   bg: '#f9f9f9',
-  bgLight: '#fff',
-  text: '#202020',
-  textSoft: '#606060 ',
-  soft: '#f5f5f5'
+  bgLighter: '#fff',
+  text: '#000',
+  textSoft: '#606060',
+  soft: '#e5e5e5'
 };

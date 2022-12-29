@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   flex: 4;
-  background-color: ${({ theme }) => theme.soft};
+  background-color: ${({ theme }) => theme.bgLighter};
 `;
 
 export const Wrapper = styled.div`

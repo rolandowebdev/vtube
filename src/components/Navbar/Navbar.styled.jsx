@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: sticky;
   top: 0;
-  background-color: ${({ theme }) => theme.bgLight};
+  background-color: ${({ theme }) => theme.bgLighter};
   height: 56px;
 `;
 
@@ -25,7 +25,7 @@ export const Search = styled.div`
   justify-content: space-between;
   margin: auto;
   width: 40%;
-  padding: 3px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 `;

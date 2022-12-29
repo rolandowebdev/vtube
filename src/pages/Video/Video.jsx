@@ -5,6 +5,8 @@ import {
   AddTaskOutlined
 } from '@mui/icons-material';
 
+import { Comment } from '../../components';
+
 import {
   Container,
   Content,
@@ -72,6 +74,8 @@ const Video = () => {
             </ChannelInfo>
             <Subscribe>Subscribe</Subscribe>
           </Channel>
+          <Hr />
+          <Comment />
         </VideoWrapper>
       </Content>
       <Recommendation>recommendation</Recommendation>

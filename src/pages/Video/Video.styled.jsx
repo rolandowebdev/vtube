@@ -73,6 +73,7 @@ export const ChannelDetail = styled.div`
 
 export const ChannelName = styled.span`
   font-weight: 500;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const ChannelCounter = styled.span`
@@ -84,6 +85,7 @@ export const ChannelCounter = styled.span`
 
 export const Description = styled.p`
   font-size: 14px;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Subscribe = styled.button`
@@ -97,6 +99,6 @@ export const Subscribe = styled.button`
 `;
 
 export const Hr = styled.hr`
-  margin: 15px 0;
-  border: 0.5px solid ${({ theme }) => theme.soft};
+  margin-block: 15px;
+  border-bottom: 0.5px solid ${({ theme }) => theme.soft};
 `;
