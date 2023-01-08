@@ -1,17 +1,26 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Container, Avatar, DateText, Details, Name, Text } from './ListComment.styled';
 
-const ListComment = () => {
+const ListComment = ({ comment }) => {
+  const [channel, setChannel] = useState({});
+
+  useEffect(() => {
+    const fetchComment = async () => {
+      const res = await axios.get(`/users/find/${comment?.userId}`);
+      setChannel(res.data);
+    };
+    fetchComment();
+  }, [comment?.userId]);
+
   return (
     <Container>
-      <Avatar src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
+      <Avatar src={channel?.image} />
       <Details>
         <Name>
-          Isagi Yoichi <DateText>3 day ago</DateText>
+          {channel?.name} <DateText>3 day ago</DateText>
         </Name>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla necessitatibus id odit a
-          et, voluptas quae error sunt accusantium quam.
-        </Text>
+        <Text>{comment?.desc}</Text>
       </Details>
     </Container>
   );

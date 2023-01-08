@@ -35,7 +35,7 @@ import {
   VideoFrame
 } from './Video.styled';
 
-import { Comment } from '../../components';
+import { Comments } from '../../components';
 
 import { fetchSuccess, fetchFailure, dislike, like } from '../../features/video/videoSlice';
 import { subscription } from '../../features/user/userSlice';
@@ -134,7 +134,7 @@ const Video = () => {
             </Subscribe>
           </Channel>
           <Hr />
-          <Comment />
+          <Comments videoId={currentVideo?._id} />
         </VideoWrapper>
       </Content>
       <Recommendation>
