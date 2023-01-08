@@ -1,34 +1,42 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { AccountCircleOutlined, SearchOutlined, VideoCallOutlined } from '@mui/icons-material';
 
+import { useState } from 'react';
+
+import { Upload } from '..';
 import { Container, Button, Input, Search, Wrapper, User, Avatar } from './Navbar.styled';
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   return (
-    <Container>
-      <Wrapper>
-        <Search>
-          <Input type="text" placeholder="Search..." />
-          <SearchOutlined />
-        </Search>
-        {!currentUser ? (
-          <Link to="signin" style={{ textDecoration: 'none' }}>
-            <Button>
-              <AccountCircleOutlined /> Sign In
-            </Button>
-          </Link>
-        ) : (
-          <User>
-            <VideoCallOutlined />
-            <Avatar src={currentUser.image} />
-            {currentUser.name}
-          </User>
-        )}
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <Search>
+            <Input type="text" placeholder="Search..." />
+            <SearchOutlined />
+          </Search>
+          {!currentUser ? (
+            <Link to="signin" style={{ textDecoration: 'none' }}>
+              <Button>
+                <AccountCircleOutlined /> Sign In
+              </Button>
+            </Link>
+          ) : (
+            <User>
+              <VideoCallOutlined style={{ cursor: 'pointer' }} onClick={() => setOpen(true)} />
+              <Avatar src={currentUser.image} />
+              {currentUser.name}
+            </User>
+          )}
+        </Wrapper>
+      </Container>
+      {open ? <Upload setOpen={setOpen} /> : null}
+    </>
   );
 };
 

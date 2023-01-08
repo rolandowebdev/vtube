@@ -3,3 +3,4 @@ export { default as Navbar } from './Navbar/Navbar';
 export { default as ThemeModeProvider } from './ThemeModeProvider/ThemeModeProvider';
 export { default as Card } from './Card/Card';
 export { default as Comments } from './Comment/Comments';
+export { default as Upload } from './Upload/Upload';
