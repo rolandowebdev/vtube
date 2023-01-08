@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { signInWithPopup } from 'firebase/auth';
 
+import { auth, provider } from '../../utils/firebase';
 import { loginSuccess, loginFailure } from '../../features/user/userSlice';
 
 import {
@@ -32,6 +34,21 @@ const SignIn = () => {
     }
   };
 
+  // function for login with google firebase
+  const signInWithGoogle = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) =>
+        axios
+          .post('/auth/google', {
+            name: result?.user?.displayName,
+            email: result?.user?.email,
+            image: result?.user?.photoURL
+          })
+          .then((res) => dispatch(loginSuccess(res.data)))
+      )
+      .catch(() => dispatch(loginFailure()));
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -46,6 +63,8 @@ const SignIn = () => {
         <Button type="button" onClick={handleLogin}>
           Sign In
         </Button>
+        <Title>or</Title>
+        <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
         <Input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
         <Input type="email" placeholder="email" />

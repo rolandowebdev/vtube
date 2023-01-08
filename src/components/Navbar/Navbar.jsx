@@ -23,7 +23,7 @@ const Navbar = () => {
         ) : (
           <User>
             <VideoCallOutlined />
-            <Avatar />
+            <Avatar src={currentUser.image} />
             {currentUser.name}
           </User>
         )}

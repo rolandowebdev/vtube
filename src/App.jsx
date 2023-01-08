@@ -4,7 +4,7 @@ import { Home, SignIn, Video } from './pages';
 import { Navbar, Sidebar } from './components';
 
 import { Container, Main, Wrapper } from './App.styled';
-import { darkTheme, lightTheme } from './utils/Theme';
+import { darkTheme, lightTheme } from './utils/theme';
 import { useThemeModeContext } from './components/ThemeModeProvider/ThemeModeProvider';
 
 const App = () => {
