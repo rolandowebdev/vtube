@@ -85,11 +85,11 @@ const Video = () => {
     <Container>
       <Content>
         <VideoWrapper>
-          <VideoFrame src={currentUser?.videoUrl} />
+          <VideoFrame src={currentVideo?.videoUrl} controls />
           <Title>{currentVideo?.title}</Title>
           <Details>
             <Info>
-              {currentUser?.views} views • {format(currentVideo?.createdAt)}
+              {currentVideo?.views} views • {format(currentVideo?.createdAt)}
             </Info>
             <Buttons>
               <Button onClick={handleLike}>
