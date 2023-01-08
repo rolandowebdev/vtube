@@ -43,6 +43,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.text};
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 export const Recommendation = styled.div`

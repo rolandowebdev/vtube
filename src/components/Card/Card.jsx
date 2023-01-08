@@ -16,7 +16,7 @@ import {
 const Card = ({ type, video }) => {
   return (
     <Container>
-      <Link to="/video/test" style={{ textDecoration: 'none' }}>
+      <Link to={`/video/${video?._id}`} style={{ textDecoration: 'none' }}>
         <Wrapper type={type}>
           <Image type={type} src={video?.imageUrl} />
           <Details type={type}>
