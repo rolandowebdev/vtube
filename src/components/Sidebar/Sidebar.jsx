@@ -25,22 +25,32 @@ const Sidebar = () => {
           </Logo>
         </Link>
         {categoriesOne.map((category) => (
-          <Item key={category.id}>
-            {category.icon}
-            {category.name}
-          </Item>
+          <Link
+            key={category.id}
+            to={category.link}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Item>
+              {category.icon}
+              {category.name}
+            </Item>
+          </Link>
         ))}
         <Hr />
         {categoriesTwo.map((category) => (
-          <Item key={category.id}>
-            {category.icon}
-            {category.name}
-          </Item>
+          <Link
+            key={category.id}
+            to={category.link}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Item>
+              {category.icon}
+              {category.name}
+            </Item>
+          </Link>
         ))}
         <Hr />
         <Login>
           Sign in to like, videos, comment, and subscribe.
-          <Link to="signin" style={{ textDecoration: 'none' }}>
+          <Link to="signin" style={{ textDecoration: 'none', color: 'inherit' }}>
             <Button>
               <AccountCircleOutlined /> Sign In
             </Button>
@@ -49,17 +59,27 @@ const Sidebar = () => {
         <Hr />
         <Title>best of vtube</Title>
         {categoriesThree.map((category) => (
-          <Item key={category.id}>
-            {category.icon}
-            {category.name}
-          </Item>
+          <Link
+            key={category.id}
+            to={category.link}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Item>
+              {category.icon}
+              {category.name}
+            </Item>
+          </Link>
         ))}
         <Hr />
         {categoriesFour.map((category) => (
-          <Item key={category.id}>
-            {category.icon}
-            {category.name}
-          </Item>
+          <Link
+            key={category.id}
+            to={category.link}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Item>
+              {category.icon}
+              {category.name}
+            </Item>
+          </Link>
         ))}
         <Item onClick={toggleTheme}>
           <SettingsBrightnessOutlinedIcon />

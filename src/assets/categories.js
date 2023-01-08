@@ -17,16 +17,19 @@ export const categoriesOne = [
   {
     id: 1,
     name: 'Home',
+    link: '/',
     icon: <HomeIcon />
   },
   {
     id: 2,
-    name: 'Home',
+    name: 'Explore',
+    link: 'trends',
     icon: <ExploreOutlinedIcon />
   },
   {
     id: 3,
-    name: 'Home',
+    name: 'Subscriptions',
+    link: 'subscriptions',
     icon: <SubscriptionsOutlinedIcon />
   }
 ];
@@ -34,12 +37,14 @@ export const categoriesOne = [
 export const categoriesTwo = [
   {
     id: 4,
-    name: 'Home',
+    name: 'Library',
+    link: 'subscriptions',
     icon: <LibraryMusicOutlinedIcon />
   },
   {
     id: 5,
-    name: 'Home',
+    name: 'History',
+    link: 'subscriptions',
     icon: <HistoryOutlinedIcon />
   }
 ];
@@ -47,32 +52,38 @@ export const categoriesTwo = [
 export const categoriesThree = [
   {
     id: 6,
-    name: 'Home',
+    name: 'Music',
+    link: 'subscriptions',
     icon: <VideoLibraryOutlinedIcon />
   },
   {
     id: 7,
-    name: 'Home',
+    name: 'Sports',
+    link: 'subscriptions',
     icon: <SportsBasketballOutlinedIcon />
   },
   {
     id: 8,
-    name: 'Home',
+    name: 'Gaming',
+    link: 'subscriptions',
     icon: <SportsEsportsOutlinedIcon />
   },
   {
     id: 9,
-    name: 'Home',
+    name: 'Movies',
+    link: 'subscriptions',
     icon: <MovieOutlinedIcon />
   },
   {
     id: 10,
-    name: 'Home',
+    name: 'News',
+    link: 'subscriptions',
     icon: <ArticleOutlinedIcon />
   },
   {
     id: 11,
-    name: 'Home',
+    name: 'Live',
+    link: 'subscriptions',
     icon: <LiveTvOutlinedIcon />
   }
 ];
@@ -80,17 +91,20 @@ export const categoriesThree = [
 export const categoriesFour = [
   {
     id: 12,
-    name: 'Home',
+    name: 'Settings',
+    link: 'subscriptions',
     icon: <SettingsOutlinedIcon />
   },
   {
     id: 13,
-    name: 'Home',
+    name: 'Report',
+    link: 'subscriptions',
     icon: <FlagOutlinedIcon />
   },
   {
     id: 14,
-    name: 'Home',
+    name: 'Help',
+    link: 'subscriptions',
     icon: <HelpOutlineOutlinedIcon />
   }
 ];
