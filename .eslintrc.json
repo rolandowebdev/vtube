@@ -28,6 +28,7 @@
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
     "no-param-reassign": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off"
   }
 }

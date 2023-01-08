@@ -97,9 +97,16 @@ export const Subscribe = styled.button`
   border-radius: 3px;
   height: max-content;
   padding: 10px 20px;
+  cursor: pointer;
 `;
 
 export const Hr = styled.hr`
   margin-block: 15px;
   border-bottom: 0.5px solid ${({ theme }) => theme.soft};
+`;
+
+export const VideoFrame = styled.video`
+  max-height: 720px;
+  width: 100%;
+  object-fit: cover;
 `;

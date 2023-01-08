@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { format } from 'timeago.js';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +13,6 @@ import {
   ThumbUp
 } from '@mui/icons-material';
 
-import { format } from 'timeago.js';
 import {
   Container,
   Content,
@@ -31,11 +31,14 @@ import {
   ChannelDetail,
   ChannelName,
   Description,
-  Image
+  Image,
+  VideoFrame
 } from './Video.styled';
+
 import { Comment } from '../../components';
 
 import { fetchSuccess, fetchFailure, dislike, like } from '../../features/video/videoSlice';
+import { subscription } from '../../features/user/userSlice';
 
 const Video = () => {
   const [channel, setChannel] = useState({});
@@ -71,18 +74,18 @@ const Video = () => {
     dispatch(dislike(currentUser?._id));
   };
 
+  const handleSubscribe = async () => {
+    currentUser.subscribedUsers.includes(channel._id)
+      ? await axios.put(`/users/unsub/${channel._id}`)
+      : await axios.put(`/users/sub/${channel._id}`);
+    dispatch(subscription(channel._id));
+  };
+
   return (
     <Container>
       <Content>
         <VideoWrapper>
-          <iframe
-            width="100%"
-            height="440"
-            src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <VideoFrame src={currentUser?.videoUrl} />
           <Title>{currentVideo?.title}</Title>
           <Details>
             <Info>
@@ -119,11 +122,16 @@ const Video = () => {
               <Image src={channel?.image} />
               <ChannelDetail>
                 <ChannelName>{channel?.name}</ChannelName>
-                <ChannelCounter>{channel?.subscribers} Subscribers</ChannelCounter>
+                <ChannelCounter>
+                  {channel?.subscribers}{' '}
+                  {channel?.subscribers?.length > 1 ? 'Subscribers' : 'Subscriber'}
+                </ChannelCounter>
                 <Description>{channel?.desc}</Description>
               </ChannelDetail>
             </ChannelInfo>
-            <Subscribe>Subscribe</Subscribe>
+            <Subscribe onClick={handleSubscribe}>
+              {currentUser.subscribedUsers?.includes(channel._id) ? 'SUBSCRIBED' : 'SUBSCRIBE'}
+            </Subscribe>
           </Channel>
           <Hr />
           <Comment />
