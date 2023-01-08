@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
-
 import { Home, SignIn, Video } from './pages';
 import { Navbar, Sidebar } from './components';
 

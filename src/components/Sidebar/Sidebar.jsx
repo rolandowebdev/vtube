@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
 import { AccountCircleOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
-import { Container, Button, Hr, Img, Item, Login, Logo, Title, Wrapper } from './Sidebar.styled';
 
 import { useThemeModeUpdateContext } from '../ThemeModeProvider/ThemeModeProvider';
+import { Container, Button, Hr, Img, Item, Login, Logo, Title, Wrapper } from './Sidebar.styled';
 
 import {
   logo,
@@ -14,6 +16,7 @@ import {
 } from '../../assets/index';
 
 const Sidebar = () => {
+  const { currentUser } = useSelector((state) => state.user);
   const toggleTheme = useThemeModeUpdateContext();
   return (
     <Container>
@@ -48,15 +51,19 @@ const Sidebar = () => {
           </Link>
         ))}
         <Hr />
-        <Login>
-          Sign in to like, videos, comment, and subscribe.
-          <Link to="signin" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Button>
-              <AccountCircleOutlined /> Sign In
-            </Button>
-          </Link>
-        </Login>
-        <Hr />
+        {!currentUser ? (
+          <>
+            <Login>
+              Sign in to like, videos, comment, and subscribe.
+              <Link to="signin" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button>
+                  <AccountCircleOutlined /> Sign In
+                </Button>
+              </Link>
+            </Login>
+            <Hr />
+          </>
+        ) : null}
         <Title>best of vtube</Title>
         {categoriesThree.map((category) => (
           <Link

@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
-import { AccountCircleOutlined, SearchOutlined } from '@mui/icons-material';
-import { Container, Button, Input, Search, Wrapper } from './Navbar.styled';
+import { useSelector } from 'react-redux';
+
+import { AccountCircleOutlined, SearchOutlined, VideoCallOutlined } from '@mui/icons-material';
+
+import { Container, Button, Input, Search, Wrapper, User, Avatar } from './Navbar.styled';
 
 const Navbar = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <Container>
       <Wrapper>
@@ -10,11 +14,19 @@ const Navbar = () => {
           <Input type="text" placeholder="Search..." />
           <SearchOutlined />
         </Search>
-        <Link to="signin" style={{ textDecoration: 'none' }}>
-          <Button>
-            <AccountCircleOutlined /> Sign In
-          </Button>
-        </Link>
+        {!currentUser ? (
+          <Link to="signin" style={{ textDecoration: 'none' }}>
+            <Button>
+              <AccountCircleOutlined /> Sign In
+            </Button>
+          </Link>
+        ) : (
+          <User>
+            <VideoCallOutlined />
+            <Avatar />
+            {currentUser.name}
+          </User>
+        )}
       </Wrapper>
     </Container>
   );
