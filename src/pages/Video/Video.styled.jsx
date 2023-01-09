@@ -46,10 +46,6 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Recommendation = styled.div`
-  flex: 2;
-`;
-
 export const Channel = styled.div`
   display: flex;
   justify-content: space-between;

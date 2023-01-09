@@ -4,3 +4,4 @@ export { default as ThemeModeProvider } from './ThemeModeProvider/ThemeModeProvi
 export { default as Card } from './Card/Card';
 export { default as Comments } from './Comment/Comments';
 export { default as Upload } from './Upload/Upload';
+export { default as Recommendation } from './Recommendation/Recommendation';

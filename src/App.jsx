@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
-import { Home, SignIn, Video } from './pages';
+import { Home, SignIn, Video, Search } from './pages';
 import { Navbar, Sidebar } from './components';
 
 import { Container, Main, Wrapper } from './App.styled';
@@ -21,6 +21,7 @@ const App = () => {
                 <Route index element={<Home type="random" />} />
                 <Route path="trends" element={<Home type="trend" />} />
                 <Route path="subscriptions" element={<Home type="sub" />} />
+                <Route path="search" element={<Search />} />
                 <Route path="signin" element={<SignIn />} />
                 <Route path="video">
                   <Route path=":id" element={<Video />} />

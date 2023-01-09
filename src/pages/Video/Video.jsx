@@ -16,7 +16,6 @@ import {
 import {
   Container,
   Content,
-  Recommendation,
   Button,
   Buttons,
   Details,
@@ -35,7 +34,7 @@ import {
   VideoFrame
 } from './Video.styled';
 
-import { Comments } from '../../components';
+import { Comments, Recommendation } from '../../components';
 
 import { fetchSuccess, fetchFailure, dislike, like } from '../../features/video/videoSlice';
 import { subscription } from '../../features/user/userSlice';
@@ -137,14 +136,7 @@ const Video = () => {
           <Comments videoId={currentVideo?._id} />
         </VideoWrapper>
       </Content>
-      <Recommendation>
-        {/* <Card type="sm" />
-        <Card type="sm" />
-        <Card type="sm" />
-        <Card type="sm" />
-        <Card type="sm" />
-        <Card type="sm" /> */}
-      </Recommendation>
+      <Recommendation tags={currentVideo?.tags} />
     </Container>
   );
 };

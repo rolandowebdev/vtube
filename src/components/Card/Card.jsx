@@ -26,8 +26,6 @@ const Card = ({ type, video }) => {
     fetchChannel();
   }, [video.userId]);
 
-  console.log(channel);
-
   return (
     <Container>
       <Link to={`/video/${video?._id}`} style={{ textDecoration: 'none' }}>

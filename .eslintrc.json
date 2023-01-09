@@ -29,6 +29,8 @@
     "react/prop-types": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "no-console": "off",
+    "import/no-cycle": "off"
   }
 }
