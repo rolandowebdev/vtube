@@ -22,3 +22,21 @@ export const Input = styled.input`
   outline: none;
   width: 100%;
 `;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  padding: 10px 10px 10px 12px;
+  border-radius: 50%;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.soft};
+  border: none;
+  transition: 200ms all ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    background-color: ${({ theme }) => theme.textSoft};
+    color: ${({ theme }) => theme.bgLighter};
+  }
+`;

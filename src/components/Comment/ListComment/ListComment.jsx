@@ -11,6 +11,7 @@ const ListComment = ({ comment }) => {
       setChannel(res.data);
     };
     fetchComment();
+    return () => null;
   }, [comment?.userId]);
 
   return (
