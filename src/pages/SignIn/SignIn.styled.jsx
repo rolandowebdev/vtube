@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  padding: 20px 40px;
+  padding: 1rem 40px;
   width: 380px;
   background-color: ${({ theme }) => theme.bgLighter};
   border: 1px solid ${({ theme }) => theme.soft};
@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-style: 24px;
+  margin-top: 1rem;
 `;
 
 export const SubTitle = styled.h2`
@@ -34,6 +35,11 @@ export const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.soft};
   border-radius: 3px;
   background-color: transparent;
+  color: ${({ theme }) => theme.text};
+  outline: none;
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.text};
+  }
 `;
 
 export const Button = styled.button`

@@ -19,6 +19,7 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: 7.5px;
   font-weight: 700;
   margin-bottom: 25px;
 `;
@@ -32,9 +33,12 @@ export const Item = styled.div`
   align-items: center;
   gap: 20px;
   cursor: pointer;
-  padding: 7.5px 0;
+  padding: 7.5px;
   border-radius: 4px;
   &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
+  &:active {
     background-color: ${({ theme }) => theme.soft};
   }
 `;

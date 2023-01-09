@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 
 import { auth, provider } from '../../utils/firebase';
@@ -19,6 +20,7 @@ import {
 } from './SignIn.styled';
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,6 +31,7 @@ const SignIn = () => {
     try {
       const res = await axios.post('/auth/signin', { name, password });
       dispatch(loginSuccess(res.data));
+      navigate('/', { replace: true });
     } catch (err) {
       dispatch(loginFailure());
     }
@@ -44,7 +47,7 @@ const SignIn = () => {
             email: result?.user?.email,
             image: result?.user?.photoURL
           })
-          .then((res) => dispatch(loginSuccess(res.data)))
+          .then((res) => dispatch(loginSuccess(res.data), navigate('/', { replace: true })))
       )
       .catch(() => dispatch(loginFailure()));
   };
@@ -53,7 +56,7 @@ const SignIn = () => {
     <Container>
       <Wrapper>
         <Title>Sign In</Title>
-        <SubTitle>to continue to VTube</SubTitle>
+        <SubTitle>for continue to VTube</SubTitle>
         <Input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
         <Input
           type="password"
@@ -63,9 +66,7 @@ const SignIn = () => {
         <Button type="button" onClick={handleLogin}>
           Sign In
         </Button>
-        <Title>or</Title>
-        <Button onClick={signInWithGoogle}>Signin with Google</Button>
-        <Title>or</Title>
+        <Title>Sign Up</Title>
         <Input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
         <Input type="email" placeholder="email" />
         <Input
@@ -74,6 +75,8 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button type="button">Sign Up</Button>
+        <Title>or</Title>
+        <Button onClick={signInWithGoogle}>Signin with Google</Button>
       </Wrapper>
       <More>
         English(USA)

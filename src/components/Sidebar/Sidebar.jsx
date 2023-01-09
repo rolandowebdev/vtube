@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
-import { AccountCircleOutlined } from '@mui/icons-material';
+import { AccountCircleOutlined, LogoutOutlined } from '@mui/icons-material';
 
 import { useThemeModeUpdateContext } from '../ThemeModeProvider/ThemeModeProvider';
 import { Container, Button, Hr, Img, Item, Login, Logo, Title, Wrapper } from './Sidebar.styled';
@@ -16,12 +16,20 @@ import {
 } from '../../assets/index';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
   const toggleTheme = useThemeModeUpdateContext();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/signin', { replace: true });
+    window.location.reload();
+  };
+
   return (
     <Container>
       <Wrapper>
-        <Link to="video/test" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Logo>
             <Img src={logo} alt="logo" />
             VTube
@@ -91,6 +99,10 @@ const Sidebar = () => {
         <Item onClick={toggleTheme}>
           <SettingsBrightnessOutlinedIcon />
           Light Theme
+        </Item>
+        <Item onClick={handleLogout}>
+          <LogoutOutlined />
+          Logout
         </Item>
       </Wrapper>
     </Container>
