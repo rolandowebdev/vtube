@@ -10,6 +10,7 @@ export const Image = styled.img`
   width: 100%;
   height: ${({ type }) => (type === 'sm' ? '125px' : '170px')};
   background-color: #999;
+  border-radius: 14px;
 `;
 
 export const Details = styled.div`
