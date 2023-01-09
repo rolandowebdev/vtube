@@ -24,7 +24,7 @@ const Sidebar = () => {
         <Link to="video/test" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Logo>
             <Img src={logo} alt="logo" />
-            VTuber
+            VTube
           </Logo>
         </Link>
         {categoriesOne.map((category) => (

@@ -27,7 +27,7 @@ const Home = ({ type }) => {
   if (error) return <p>An error occured: {error.message}</p>;
 
   return (
-    <Container>
+    <Container videoLength={videos.length}>
       {videos ? videos.map((video) => <Card key={video?._id} video={video} />) : null}
     </Container>
   );

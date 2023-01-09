@@ -5,6 +5,7 @@ export const Container = styled.div`
   top: 0;
   background-color: ${({ theme }) => theme.bgLighter};
   height: 56px;
+  z-index: 99;
 `;
 
 export const Wrapper = styled.div`
@@ -39,6 +40,7 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Button = styled.button`

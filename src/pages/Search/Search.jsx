@@ -18,7 +18,7 @@ const Search = () => {
   }, [query]);
 
   return (
-    <Container>
+    <Container videoLength={videos.length}>
       {videos.map((video) => (
         <Card key={video?._id} video={video} />
       ))}
