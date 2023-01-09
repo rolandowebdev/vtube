@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { CloseOutlined } from '@mui/icons-material';
 
 import app from '../../utils/firebase';
 
@@ -81,9 +82,11 @@ const Upload = ({ setOpen }) => {
   return (
     <Container>
       <Wrapper>
-        <Close onClick={() => setOpen(false)}>X</Close>
+        <Close onClick={() => setOpen(false)}>
+          <CloseOutlined />
+        </Close>
         <Title>Upload a new video</Title>
-        <Label>Video:</Label>
+        <Label>Video :</Label>
         {videoPercentage > 0 ? (
           `Uploading: ${videoPercentage}%`
         ) : (
@@ -92,7 +95,7 @@ const Upload = ({ setOpen }) => {
         <Input type="text" placeholder="Title" name="title" onChange={handleChange} />
         <Desc placeholder="Description" rows={8} name="desc" onChange={handleChange} />
         <Input type="text" placeholder="Separate the tags with commas." onChange={handleTags} />
-        <Label>Image:</Label>
+        <Label>Image :</Label>
         {imagePercentage > 0 ? (
           `Uploading: ${imagePercentage}%`
         ) : (

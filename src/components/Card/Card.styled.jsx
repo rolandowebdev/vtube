@@ -21,8 +21,8 @@ export const Details = styled.div`
 
 export const ChannelImage = styled.img`
   display: ${({ type }) => type === 'sm' && 'none'};
-  width: 32px;
   height: 32px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: #999;
 `;

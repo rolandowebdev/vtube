@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   background-color: #000000a7;
+  z-index: 999;
 `;
 
 export const Wrapper = styled.div`
@@ -35,11 +34,16 @@ export const Title = styled.h1`
 `;
 
 export const Input = styled.input`
+  height: 60px;
   padding: 10px;
   border: 1px solid ${({ theme }) => theme.soft};
   border-radius: 3px;
   background-color: transparent;
   color: ${({ theme }) => theme.text};
+  outline: none;
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.text};
+  }
 `;
 
 export const Desc = styled.textarea`
@@ -48,6 +52,10 @@ export const Desc = styled.textarea`
   border-radius: 3px;
   background-color: transparent;
   color: ${({ theme }) => theme.text};
+  outline: none;
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.text};
+  }
 `;
 
 export const Button = styled.button`
