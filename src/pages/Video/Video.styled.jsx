@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 24px;
 `;
 
 export const Content = styled.div`
-  flex: 4;
+  flex: 5;
 `;
-
-export const VideoWrapper = styled.div``;
 
 export const Title = styled.h1`
   font-size: 18px;

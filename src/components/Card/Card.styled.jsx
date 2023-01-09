@@ -6,11 +6,6 @@ export const Container = styled.div`
   flex-grow: 1;
 `;
 
-export const Wrapper = styled.div`
-  display: ${({ type }) => type === 'sm' && 'flex'};
-  gap: 10px;
-`;
-
 export const Image = styled.img`
   width: 100%;
   height: ${({ type }) => (type === 'sm' ? '125px' : '170px')};

@@ -11,8 +11,7 @@ import {
   ChannelName,
   Info,
   Text,
-  Title,
-  Wrapper
+  Title
 } from './Card.styled';
 
 const Card = ({ type, video }) => {
@@ -29,19 +28,17 @@ const Card = ({ type, video }) => {
   return (
     <Container>
       <Link to={`/video/${video?._id}`} style={{ textDecoration: 'none' }}>
-        <Wrapper type={type}>
-          <Image type={type} src={video?.imgUrl} />
-          <Details type={type}>
-            <ChannelImage type={type} src={channel?.image} />
-            <Text>
-              <Title>{video?.title}</Title>
-              <ChannelName>{channel?.name}</ChannelName>
-              <Info>
-                {video?.views} views • {format(video?.createdAt)}
-              </Info>
-            </Text>
-          </Details>
-        </Wrapper>
+        <Image type={type} src={video?.imgUrl} />
+        <Details type={type}>
+          <ChannelImage type={type} src={channel?.image} />
+          <Text>
+            <Title>{video?.title}</Title>
+            <ChannelName>{channel?.name}</ChannelName>
+            <Info>
+              {video?.views} views • {format(video?.createdAt)}
+            </Info>
+          </Text>
+        </Details>
       </Link>
     </Container>
   );

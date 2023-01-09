@@ -21,7 +21,6 @@ import {
   Details,
   Info,
   Title,
-  VideoWrapper,
   Hr,
   Channel,
   ChannelInfo,
@@ -83,58 +82,52 @@ const Video = () => {
   return (
     <Container>
       <Content>
-        <VideoWrapper>
-          <VideoFrame src={currentVideo?.videoUrl} controls />
-          <Title>{currentVideo?.title}</Title>
-          <Details>
-            <Info>
-              {currentVideo?.views} views • {format(currentVideo?.createdAt)}
-            </Info>
-            <Buttons>
-              <Button onClick={handleLike}>
-                {currentVideo?.likes?.includes(currentUser?._id) ? (
-                  <ThumbUp />
-                ) : (
-                  <ThumbUpOutlined />
-                )}{' '}
-                {currentVideo?.likes?.length}
-              </Button>
-              <Button onClick={handleDislike}>
-                {currentVideo?.dislikes?.includes(currentUser?._id) ? (
-                  <ThumbDown />
-                ) : (
-                  <ThumbDownOutlined />
-                )}
-                Dislike
-              </Button>
-              <Button>
-                <ReplyOutlined /> Share
-              </Button>
-              <Button>
-                <AddTaskOutlined /> Save
-              </Button>
-            </Buttons>
-          </Details>
-          <Hr />
-          <Channel>
-            <ChannelInfo>
-              <Image src={channel?.image} />
-              <ChannelDetail>
-                <ChannelName>{channel?.name}</ChannelName>
-                <ChannelCounter>
-                  {channel?.subscribers}{' '}
-                  {channel?.subscribers?.length > 1 ? 'Subscribers' : 'Subscriber'}
-                </ChannelCounter>
-                <Description>{channel?.desc}</Description>
-              </ChannelDetail>
-            </ChannelInfo>
-            <Subscribe onClick={handleSubscribe}>
-              {currentUser.subscribedUsers?.includes(channel._id) ? 'SUBSCRIBED' : 'SUBSCRIBE'}
-            </Subscribe>
-          </Channel>
-          <Hr />
-          <Comments videoId={currentVideo?._id} />
-        </VideoWrapper>
+        <VideoFrame src={currentVideo?.videoUrl} controls />
+        <Title>{currentVideo?.title}</Title>
+        <Details>
+          <Info>
+            {currentVideo?.views} views • {format(currentVideo?.createdAt)}
+          </Info>
+          <Buttons>
+            <Button onClick={handleLike}>
+              {currentVideo?.likes?.includes(currentUser?._id) ? <ThumbUp /> : <ThumbUpOutlined />}{' '}
+              {currentVideo?.likes?.length}
+            </Button>
+            <Button onClick={handleDislike}>
+              {currentVideo?.dislikes?.includes(currentUser?._id) ? (
+                <ThumbDown />
+              ) : (
+                <ThumbDownOutlined />
+              )}
+              Dislike
+            </Button>
+            <Button>
+              <ReplyOutlined /> Share
+            </Button>
+            <Button>
+              <AddTaskOutlined /> Save
+            </Button>
+          </Buttons>
+        </Details>
+        <Hr />
+        <Channel>
+          <ChannelInfo>
+            <Image src={channel?.image} />
+            <ChannelDetail>
+              <ChannelName>{channel?.name}</ChannelName>
+              <ChannelCounter>
+                {channel?.subscribers}{' '}
+                {channel?.subscribers?.length > 1 ? 'Subscribers' : 'Subscriber'}
+              </ChannelCounter>
+              <Description>{channel?.desc}</Description>
+            </ChannelDetail>
+          </ChannelInfo>
+          <Subscribe onClick={handleSubscribe}>
+            {currentUser.subscribedUsers?.includes(channel._id) ? 'SUBSCRIBED' : 'SUBSCRIBE'}
+          </Subscribe>
+        </Channel>
+        <Hr />
+        <Comments videoId={currentVideo?._id} />
       </Content>
       <Recommendation tags={currentVideo?.tags} />
     </Container>
