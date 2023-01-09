@@ -9,18 +9,19 @@ export const NewComment = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 50px;
   height: 50px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
 `;
 
 export const Input = styled.input`
+  width: 100%;
   padding: 5px;
   border: none;
   border-bottom: 1px solid ${({ theme }) => theme.soft};
   background-color: transparent;
+  color: ${({ theme }) => theme.text};
   outline: none;
-  width: 100%;
 `;
 
 export const Button = styled.button`

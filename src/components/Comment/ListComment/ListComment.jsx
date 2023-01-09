@@ -1,9 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Container, Avatar, DateText, Details, Name, Text } from './ListComment.styled';
+// import { useSelector } from 'react-redux';
+import { DeleteRounded } from '@mui/icons-material';
+
+import { useSelector } from 'react-redux';
+import { Container, Avatar, DateText, Details, Name, Text, Button } from './ListComment.styled';
 
 const ListComment = ({ comment }) => {
   const [channel, setChannel] = useState({});
+  const { currentUser } = useSelector((state) => state.user);
+  const { currentVideo } = useSelector((state) => state.video);
 
   useEffect(() => {
     const fetchComment = async () => {
@@ -14,6 +20,15 @@ const ListComment = ({ comment }) => {
     return () => null;
   }, [comment?.userId]);
 
+  const handleDeleteComment = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.delete(`/comments/${comment?._id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container>
       <Avatar src={channel?.image} />
@@ -23,6 +38,11 @@ const ListComment = ({ comment }) => {
         </Name>
         <Text>{comment?.desc}</Text>
       </Details>
+      {currentUser?._id === comment?.userId || currentVideo?._id === comment?.userId ? (
+        <Button onClick={handleDeleteComment}>
+          <DeleteRounded />
+        </Button>
+      ) : null}
     </Container>
   );
 };

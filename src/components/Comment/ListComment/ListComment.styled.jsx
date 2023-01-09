@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
   margin-block: 30px;
 `;
@@ -33,4 +34,20 @@ export const DateText = styled.span`
 
 export const Text = styled.span`
   font-size: 14px;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  border-radius: 50%;
+  color: ${({ theme }) => theme.textSoft};
+  background-color: transparent;
+  border: none;
+  transition: 200ms all ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    color: ${({ theme }) => theme.text};
+  }
 `;

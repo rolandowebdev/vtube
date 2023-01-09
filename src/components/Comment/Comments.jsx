@@ -29,6 +29,7 @@ const Comment = ({ videoId }) => {
     } catch (error) {
       console.log(error);
     }
+    setDesc('');
   };
 
   return (
