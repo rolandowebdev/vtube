@@ -38,11 +38,12 @@ const ListComment = ({ comment }) => {
         </Name>
         <Text>{comment?.desc}</Text>
       </Details>
-      {currentUser?._id === comment?.userId || currentVideo?._id === comment?.userId ? (
-        <Button onClick={handleDeleteComment}>
-          <DeleteRounded />
-        </Button>
-      ) : null}
+      {currentUser?._id === comment?.userId ||
+        (currentVideo?._id === comment?.userId && (
+          <Button onClick={handleDeleteComment}>
+            <DeleteRounded />
+          </Button>
+        ))}
     </Container>
   );
 };

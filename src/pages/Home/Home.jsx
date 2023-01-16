@@ -28,7 +28,7 @@ const Home = ({ type }) => {
 
   return (
     <Container videoLength={videos.length}>
-      {videos ? videos.map((video) => <Card key={video?._id} video={video} />) : null}
+      {videos && videos.map((video) => <Card key={video?._id} video={video} />)}
     </Container>
   );
 };

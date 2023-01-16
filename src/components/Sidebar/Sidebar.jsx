@@ -59,7 +59,7 @@ const Sidebar = () => {
           </Link>
         ))}
         <Hr />
-        {!currentUser ? (
+        {!currentUser && (
           <>
             <Login>
               Sign in to like, videos, comment, and subscribe.
@@ -71,7 +71,7 @@ const Sidebar = () => {
             </Login>
             <Hr />
           </>
-        ) : null}
+        )}
         <Title>best of vtube</Title>
         {categoriesThree.map((category) => (
           <Link

@@ -36,7 +36,7 @@ const Navbar = () => {
           )}
         </Wrapper>
       </Container>
-      {open ? <Upload setOpen={setOpen} /> : null}
+      {open && <Upload setOpen={setOpen} />}
     </>
   );
 };

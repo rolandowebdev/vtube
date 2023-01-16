@@ -1,23 +1,14 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 
 import { auth, provider } from '../../utils/firebase';
 import { loginSuccess, loginFailure } from '../../features/user/userSlice';
 
-import {
-  Container,
-  Wrapper,
-  Button,
-  Input,
-  More,
-  SubTitle,
-  Title,
-  ListLink,
-  Links
-} from './SignIn.styled';
+import { Container, Wrapper, Button, Input, SubTitle, Title } from './SignIn.styled';
+import Footer from './Footer';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -57,35 +48,31 @@ const SignIn = () => {
       <Wrapper>
         <Title>Sign In</Title>
         <SubTitle>for continue to VTube</SubTitle>
-        <Input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
+        <Input
+          type="text"
+          placeholder="username"
+          onChange={(e) => setName(e.target.value)}
+          autoComplete="off"
+        />
         <Input
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="off"
         />
         <Button type="button" onClick={handleLogin}>
           Sign In
         </Button>
-        <Title>Sign Up</Title>
-        <Input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
-        <Input type="email" placeholder="email" />
-        <Input
-          type="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button type="button">Sign Up</Button>
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
+        <SubTitle style={{ marginTop: 4 }}>
+          Already have account?{' '}
+          <Link to="/signup" style={{ color: '#0081C9', textDecoration: 'none' }}>
+            SignUp
+          </Link>
+        </SubTitle>
       </Wrapper>
-      <More>
-        English(USA)
-        <Links>
-          <ListLink>Help</ListLink>
-          <ListLink>Privacy</ListLink>
-          <ListLink>Terms</ListLink>
-        </Links>
-      </More>
+      <Footer />
     </Container>
   );
 };

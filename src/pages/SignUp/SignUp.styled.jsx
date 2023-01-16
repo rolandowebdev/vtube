@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: calc(100vh - 112px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   color: ${({ theme }) => theme.text};
 `;
@@ -22,11 +22,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-style: 24px;
-`;
-
-export const SubTitle = styled.h2`
-  font-size: 16px;
-  font-weight: 300;
+  margin-top: 1rem;
 `;
 
 export const Input = styled.input`
@@ -50,6 +46,9 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.textSoft};
+  &:hover {
+    background-color: ${({ theme }) => theme.bg};
+  }
 `;
 
 export const More = styled.div`
