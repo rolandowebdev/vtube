@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { Card } from '../../components';
+import { Card, Loader } from '../../components';
 import { Container } from './Home.styled';
 
 const Home = ({ type }) => {
@@ -23,7 +23,7 @@ const Home = ({ type }) => {
     fetchVideo();
   }, [type]);
 
-  if (loading) return <p>Loading Video..</p>;
+  if (loading) return <Loader center />;
   if (error) return <p>An error occured: {error.message}</p>;
 
   return (

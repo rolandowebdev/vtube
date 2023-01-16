@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useRef } from 'react';
+
+import { Loader } from '../../components';
 import Footer from './Footer';
 import { Container, Wrapper, Button, Input, Title } from './SignUp.styled';
 
@@ -7,6 +9,7 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -14,10 +17,12 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     try {
+      setLoading(true);
       await axios.post('auth/signup', { name, email, password });
     } catch (error) {
       console.log(error);
     } finally {
+      setLoading(false);
       nameRef.current.value = '';
       emailRef.current.value = '';
       passwordRef.current.value = '';
@@ -50,7 +55,7 @@ const SignUp = () => {
           autoComplete="off"
         />
         <Button type="button" onClick={handleSignUp}>
-          Sign Up
+          {loading ? <Loader type="oval" /> : 'Sign Up'}
         </Button>
       </Wrapper>
       <Footer />

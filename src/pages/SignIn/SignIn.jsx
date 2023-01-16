@@ -9,22 +9,27 @@ import { loginSuccess, loginFailure } from '../../features/user/userSlice';
 
 import { Container, Wrapper, Button, Input, SubTitle, Title } from './SignIn.styled';
 import Footer from './Footer';
+import { Loader } from '../../components';
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const res = await axios.post('/auth/signin', { name, password });
       dispatch(loginSuccess(res.data));
       navigate('/', { replace: true });
     } catch (err) {
       dispatch(loginFailure());
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -61,7 +66,7 @@ const SignIn = () => {
           autoComplete="off"
         />
         <Button type="button" onClick={handleLogin}>
-          Sign In
+          {loading ? <Loader type="oval" /> : 'Sign In'}
         </Button>
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>

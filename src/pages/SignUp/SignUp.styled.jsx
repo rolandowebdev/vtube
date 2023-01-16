@@ -39,6 +39,8 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  min-width: 91px;
+  min-height: 40px;
   border-radius: 3px;
   border: none;
   padding: 10px 20px;
